@@ -1,0 +1,39 @@
+.wrapper {
+  width: 1440px;
+  height: 696px;
+  padding: 260px 805px 260px 64px;
+  background: rgba(0, 0, 0, 0.2) url('Picture.png');
+}
+.title {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 67%;
+  color: var(--color-inputs);
+  padding-bottom: 16px;
+}
+.text {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  color: var(--color-inputs);
+  padding-bottom: 40px;
+}
+.button {
+  /* display: block; */
+  border-radius: 200px;
+  border: 0;
+  padding: 16px 48.5px;
+  width: 173px;
+  height: 56px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--color-white);
+  background-color: var(--color-button);
+  cursor: pointer;
+}
+.button:hover,
+.button:focus {
+  background-color: var(--color-button-hover);
+}

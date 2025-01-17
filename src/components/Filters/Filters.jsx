@@ -2,16 +2,16 @@ import FilterCard from '../FilterCard/FilterCard';
 import CSS from './Filters.module.css';
 export default function Filters() {
   const vehicleEquipment = [
-    { id: 1, name: 'AC', icon: '/icons/AC.svg' },
+    { id: 1, name: 'AC', icon: './icons/AC.svg' },
     { id: 2, name: 'Automatic', icon: './icons/Automatic.svg' },
-    { id: 3, name: 'Kitchen', icon: '/public/icons/Kitchen.svg' },
-    { id: 4, name: 'TV', icon: '/public/icons/TV.svg' },
-    { id: 5, name: 'Bathroom', icon: '/public/icons/Bathroom.svg' }
+    { id: 3, name: 'Kitchen', icon: './icons/Kitchen.svg' },
+    { id: 4, name: 'TV', icon: './icons/TV.svg' },
+    { id: 5, name: 'Bathroom', icon: './icons/Bathroom.svg' }
   ];
   const vehicleType =[
-    { id: 1, name: 'Van', icon: '/public/icons/Van.svg' },
-    { id: 2, name: 'Fully Integrated', icon: '/public/icons/FullyIntegrated.svg' },
-    { id: 3, name: 'Alcove', icon: '/public/icons/Alcove.svg' }
+    { id: 1, name: 'Van', icon: './icons/Van.svg' },
+    { id: 2, name: 'Fully Integrated', icon: './icons/FullyIntegrated.svg' },
+    { id: 3, name: 'Alcove', icon: './icons/Alcove.svg' }
   ]
   return (
     <div className={CSS.box}>

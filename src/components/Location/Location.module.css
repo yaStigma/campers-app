@@ -23,3 +23,6 @@
 .input:hover {
   outline: none;
 }
+.box {
+  margin-bottom: 40px;
+}

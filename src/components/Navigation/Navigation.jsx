@@ -9,14 +9,14 @@ export default function Navigation() {
   return (
     <nav className={CSS.wrapper}>
       <NavLink to="/" className={getNavLinkClass}>
-        {/* <button type="button" className={CSS.button}> */}
+
           Home
-        {/* </button> */}
+
       </NavLink>
       <NavLink to="/catalog" className={getNavLinkClass}>
-        {/* <button type="button" className={CSS.button}> */}
+
           Catalog
-        {/* </button> */}
+
       </NavLink>
     </nav>
   );

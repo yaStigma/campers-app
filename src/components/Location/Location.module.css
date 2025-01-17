@@ -1,0 +1,25 @@
+.title {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--color-gray);
+  margin-bottom: 8px;
+}
+.input {
+  border-radius: 12px;
+  border: 0;
+  width: 360px;
+  height: 56px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--color-main);
+  background: url('public/icons/loc.svg') no-repeat left center;
+  background-position: 18px center;
+  background-color: var(--color-inputs);
+  padding: 18px 18px 18px 44px;
+}
+.input:focus,
+.input:hover {
+  outline: none;
+}

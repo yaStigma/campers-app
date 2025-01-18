@@ -3,6 +3,9 @@ import { fetchCampers, fetchCamperID } from './operations';
 
 const initialState = {
   items: [],
+  total: 0,
+  page: 0,
+  limit: 4,
   camper: null,
   loading: false,
   error: null,
@@ -11,6 +14,11 @@ const initialState = {
 const campersSlise = createSlice({
   name: 'campers',
   initialState,
+  reducers: {
+    incrementPage: state => {
+      state.page += 1;
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(fetchCampers.pending, state => {
@@ -20,6 +28,7 @@ const campersSlise = createSlice({
       .addCase(fetchCampers.fulfilled, (state, action) => {
         state.loading = false;
         state.items = action.payload.items;
+        state.total = action.payload.total;
       })
       .addCase(fetchCampers.rejected, (state, action) => {
         state.loading = false;
@@ -39,4 +48,6 @@ const campersSlise = createSlice({
       });
   },
 });
+
+export const { incrementPage } = campersSlise.actions;
 export default campersSlise.reducer;

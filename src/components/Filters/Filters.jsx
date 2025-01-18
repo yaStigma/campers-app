@@ -1,6 +1,10 @@
+import { useState } from 'react';
 import FilterCard from '../FilterCard/FilterCard';
 import CSS from './Filters.module.css';
-export default function Filters() {
+//
+export default function Filters({onFiltersChange}) {
+  const [selectedEquipment, setSelectedEquipment] = useState([]);
+  const [selectedVehicleType, setSelectedVehicleType] = useState('');
   const vehicleEquipment = [
     { id: 1, name: 'AC', icon: './icons/AC.svg' },
     { id: 2, name: 'Automatic', icon: './icons/Automatic.svg' },
@@ -13,6 +17,22 @@ export default function Filters() {
     { id: 2, name: 'Fully Integrated', icon: './icons/FullyIntegrated.svg' },
     { id: 3, name: 'Alcove', icon: './icons/Alcove.svg' }
   ]
+
+    // Обробник зміни обладнання
+  const handleEquipmentChange = (name) => {
+    const newEquipment = selectedEquipment.includes(name)
+      ? selectedEquipment.filter((item) => item !== name)
+      : [...selectedEquipment, name];
+    setSelectedEquipment(newEquipment);
+    onFiltersChange({ equipment: newEquipment, vehicleType: selectedVehicleType });
+  };
+
+  // Обробник зміни типу кузова
+  const handleVehicleTypeChange = (type) => {
+    setSelectedVehicleType(type);
+    onFiltersChange({ equipment: selectedEquipment, vehicleType: type });
+  };
+
   return (
     <div className={CSS.box}>
       <p className={CSS.title}>Filters</p>
@@ -22,7 +42,7 @@ export default function Filters() {
         <ul className={CSS.list}>
           {vehicleEquipment.map(({ id, name, icon }) => (
             <li className={CSS.card} key={id}>
-              <FilterCard key={id} id={id} name={name} icon={icon} />
+              <FilterCard key={id} id={id} name={name} icon={icon} onChange={() => handleEquipmentChange(name)}/>
             </li>
           ))}
         </ul>
@@ -33,14 +53,12 @@ export default function Filters() {
         <ul className={CSS.list}>
         {vehicleType.map(({ id, name, icon }) => (
             <li className={CSS.card} key={id}>
-              <FilterCard key={id} id={id} name={name} icon={icon} />
+              <FilterCard key={id} id={id} name={name} icon={icon} onChange={() => handleVehicleTypeChange(name)}/>
             </li>
           ))}
         </ul>
       </div>
-      <button type="button" className={CSS.button}>
-        Search
-      </button>
+
     </div>
   );
 }

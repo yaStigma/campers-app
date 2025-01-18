@@ -44,21 +44,3 @@
 .card:hover {
   border: 1px solid var(--color-button);
 }
-.button {
-  border-radius: 200px;
-  border: 0;
-  padding: 16px 60px;
-  width: 166px;
-  height: 56px;
-  background-color: var(--color-button);
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
-  letter-spacing: -0.01em;
-  color: var(--color-white);
-  cursor: pointer;
-}
-.button:focus,
-.button:hover {
-  background-color: var(--color-button-hover);
-}

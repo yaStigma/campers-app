@@ -1,3 +1,5 @@
+import { ReactComponent as StarIcon } from '../../icon/star.svg'
+import CSS from './CamperCard.module.css'
 export default function CamperCard({ items }) {
   const {
     id,
@@ -21,16 +23,19 @@ export default function CamperCard({ items }) {
   return (
     <>
       <div className={CSS.picBox}>
-        <img src={gallery[0].thumb} alt={name} />
+        <img src={gallery[0].thumb} alt={name} className={CSS.pic} />
       </div>
       <div className={CSS.infoBox}>
         <div className={CSS.title}>
-          <h2>{name}</h2>
-          <p>€{price}.00</p>
-          <img src="./public/icons/heart.svg" alt="favorite" />
-        </div>
+          <h2 className={CSS.name}>{name}</h2>
+          <div className={CSS.priceBox}>
+          <p className={CSS.price}>€{price}.00</p>
+          <img className={CSS.favorite} src="./public/icons/heart.svg" alt="favorite" />
+       </div> </div>
         <div className={CSS.details}>
-          <img src="/public/icons/star.svg" alt="star" />
+          {/* <img className={CSS.star} src="/public/icons/star.svg" alt="star" /> */}
+         <div className={CSS.star}> <StarIcon/></div>
+        
           <p>
             {rating} ({reviews.length} Reviews)
           </p>

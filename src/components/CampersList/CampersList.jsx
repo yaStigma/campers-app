@@ -20,7 +20,7 @@ export default function CampersList() {
             <ul>
             {items && items.length > 0 ? (
                     items.map(camper => (
-                        <li key={camper.id}><CamperCard items={camper}/></li>
+                        <li key={camper.id} className={CSS.box}><CamperCard items={camper}/></li>
                     ))
                 ) : (
                     <li>No campers found</li> 

@@ -1,7 +1,9 @@
+import CSS from "./CamperPage.module.css"
+import CamperInfo from "../../components/CamperInfo/CamperInfo"
 export default function CamperPage() {
     return(
-        <div>
-            CamperPage coming soon
-        </div>
+        <main className={CSS.wrapper}>
+            <CamperInfo/>
+        </main>
     )
 };

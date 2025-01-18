@@ -2,7 +2,9 @@ import  StarGoldIcon  from '../../icon/star-gold.svg?react'
 import HeartIcon from '../../icon/heart.svg?react'
 import LocIcon from '../../icon/loc.svg?react'
 import BadgesCard from '../BadgesCard/BadgesCard'
+
 import CSS from './CamperCard.module.css'
+import { Link } from 'react-router-dom'
 export default function CamperCard({ items }) {
   const {
     id,
@@ -68,9 +70,11 @@ export default function CamperCard({ items }) {
                       </li>
                     ))}
         </ul>
+        <Link to={`/catalog/${id}`} >    
 <button type="button" className={CSS.button}>
 Show more
       </button>
+      </Link>
       </div>
    
     </>

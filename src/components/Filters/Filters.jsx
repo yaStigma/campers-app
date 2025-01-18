@@ -1,7 +1,12 @@
 import { useState } from 'react';
 import FilterCard from '../FilterCard/FilterCard';
 import CSS from './Filters.module.css';
+import clsx from 'clsx';
 //
+const getFilterClass = (isActive) => {
+  return clsx(CSS.card, isActive && CSS.active);
+}
+
 export default function Filters({onFiltersChange}) {
   const [selectedEquipment, setSelectedEquipment] = useState([]);
   const [selectedVehicleType, setSelectedVehicleType] = useState('');
@@ -41,7 +46,7 @@ export default function Filters({onFiltersChange}) {
         <hr className={CSS.line} />
         <ul className={CSS.list}>
           {vehicleEquipment.map(({ id, name, icon }) => (
-            <li className={CSS.card} key={id}>
+            <li className={getFilterClass(selectedEquipment.includes(name))} key={id}>
               <FilterCard key={id} id={id} name={name} icon={icon} onChange={() => handleEquipmentChange(name)}/>
             </li>
           ))}
@@ -52,7 +57,7 @@ export default function Filters({onFiltersChange}) {
         <hr className={CSS.line} />
         <ul className={CSS.list}>
         {vehicleType.map(({ id, name, icon }) => (
-            <li className={CSS.card} key={id}>
+            <li className={getFilterClass(selectedVehicleType === name)} key={id}>
               <FilterCard key={id} id={id} name={name} icon={icon} onChange={() => handleVehicleTypeChange(name)}/>
             </li>
           ))}

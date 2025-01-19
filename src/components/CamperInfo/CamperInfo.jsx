@@ -9,11 +9,8 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 //
 export default function CamperInfo() {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     const camperData = useSelector(selectCamperId);
-    console.log('Camper Data:', camperData);
-    const { name, rating, reviews, location, price, gallery
-, description } = camperData ; 
     const { id } = useParams();
 
     useEffect(() => {
@@ -22,6 +19,11 @@ export default function CamperInfo() {
         }
     }, [dispatch, id]);
 
+    if (!camperData) {
+        return <div>Loading...</div>; // Или ваш компонент Loader
+    }
+
+    const { name, rating, reviews, location, price, description, gallery } = camperData;
     return (
         <div className={CSS.wrapper}>
             <h2 className={CSS.name}>{name}</h2>
@@ -40,8 +42,8 @@ export default function CamperInfo() {
             <p className={CSS.price}>€{price}.00</p>
 
                 <ul className={CSS.gallery}>
-                          {gallery.map(({ thumb }) => (
-                                      <li className={CSS.card} key={id}>
+                          {gallery.map(({ thumb, original }) => (
+                                      <li className={CSS.card} key={original} >
                                         <img src={thumb} alt={name} className={CSS.foto} />
                                       </li>
                                     ))}

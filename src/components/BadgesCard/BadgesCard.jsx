@@ -1,7 +1,7 @@
 
 import CSS from './BadgesCard.module.css'; 
 
-export default function BadgesCard({ id, name, stat, icon }) {
+export default function BadgesCard({ name, stat, icon }) {
   if (stat === false) return null; 
   return (
     <div className={CSS.badgeCard}>

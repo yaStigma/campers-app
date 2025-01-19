@@ -5,3 +5,32 @@
   height: 588px;
   background: var(--color-inputs);
 }
+.details {
+  margin-top: 100px;
+}
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--color-main);
+  margin-bottom: 24px;
+}
+.line {
+  border: none;
+  height: 1px;
+  background-color: var(--color-gray-light);
+  margin-bottom: 24px;
+}
+.textBox {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-bottom: 16px;
+}
+.text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: var(--color-main);
+}

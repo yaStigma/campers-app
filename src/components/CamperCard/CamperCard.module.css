@@ -91,15 +91,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.budges {
-  display: flex;
-  flex-wrap: wrap;
-  grid-template-rows: repeat(2, 1fr);
-  width: 524px;
-  height: 112px;
-  overflow: hidden;
-  margin-bottom: 16px;
-}
+
 .button {
   border-radius: 200px;
   border: 0;

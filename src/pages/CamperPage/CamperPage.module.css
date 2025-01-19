@@ -2,4 +2,8 @@
   width: 1440px;
   padding: 48px 64px 52px 64px;
   display: flex;
+  flex-direction: column;
+}
+.boxWrapper {
+  display: flex;
 }

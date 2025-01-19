@@ -7,6 +7,7 @@ import { fetchCamperID } from '../../redux/campers/operations';
 import { selectCamperId } from '../../redux/campers/selectors';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+
 //
 export default function CamperInfo() {
     const dispatch = useDispatch();

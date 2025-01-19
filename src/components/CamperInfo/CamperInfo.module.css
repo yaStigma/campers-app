@@ -49,15 +49,16 @@
   font-size: 16px;
   line-height: 150%;
   color: var(--color-text);
-  width: 524px;
+  width: 1312px;
   height: 24px;
-  margin-bottom: 24px;
-  white-space: nowrap;
+  margin-bottom: 60px;
+  /* white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis; */
 }
 .gallery {
   display: flex;
+  margin-bottom: 24px;
 }
 .card {
   border-radius: 10px;

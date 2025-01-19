@@ -4,7 +4,7 @@ export default function Logo() {
     return(
         <div className={CSS.logo}>
      <Link to="/">
-     <img  src="./icons/Logo.svg" alt="Logo" />
+     <img  src="/icons/Logo.svg" alt="Logo" />
      </Link>
         </div>
     )

@@ -6,11 +6,11 @@ import { useParams } from 'react-router-dom';
 import StarGoldIcon from '../../icon/star-gold.svg?react';
 import StarGrayIcon from '../../icon/star.svg?react';
 import CSS from './Reviews.module.css';
+import Loader from '../Loader/Loader';
 export default function Reviews() {
   const dispatch = useDispatch();
   const camperData = useSelector(selectCamperId);
   const { id } = useParams();
-  console.log(id);
   useEffect(() => {
     if (id) {
       dispatch(fetchCamperID(id));
@@ -18,7 +18,7 @@ export default function Reviews() {
   }, [dispatch, id]);
 
   if (!camperData) {
-    return <div>Loading...</div>; // Или ваш компонент Loader
+    return <Loader />;
   }
   const { reviews } = camperData;
 

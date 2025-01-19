@@ -27,7 +27,6 @@ export const fetchCampers = createAsyncThunk(
       }
 
       const { data } = await axios.get('/campers', { params });
-      console.log(data);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -38,7 +37,6 @@ export const fetchCampers = createAsyncThunk(
 export const fetchCamperID = createAsyncThunk('/campers/fetchID', async (id, thunkAPI) => {
   try {
     const { data } = await axios.get(`/campers/${id}`);
-    console.log(' Data:', data);
     return data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);

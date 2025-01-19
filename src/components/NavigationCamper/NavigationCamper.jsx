@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import clsx from 'clsx';
-import CSS from './NavigationCamper.module.css'
+import CSS from './NavigationCamper.module.css';
 const getNavLinkClass = props => {
   return clsx(CSS.link, props.isActive && CSS.active);
 };

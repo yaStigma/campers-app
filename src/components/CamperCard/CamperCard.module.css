@@ -42,6 +42,7 @@
   height: 24px;
   cursor: pointer;
 }
+.active path,
 .favorite:focus,
 .favorite:hover path {
   fill: var(--color-button);

@@ -55,6 +55,6 @@ const campersSlise = createSlice({
 });
 
 export const { incrementPage } = campersSlise.actions;
-
 export const { resetCamperData } = campersSlise.actions;
+
 export default campersSlise.reducer;

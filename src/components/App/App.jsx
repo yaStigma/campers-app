@@ -2,8 +2,7 @@ import { Route, Routes } from "react-router"
 import { Suspense, lazy } from "react"
 
 import Layout from "../Layout/Layout"
-import Reviews from "../Reviews/Reviews";
-import Features from "../Features/Features";
+
 
 
 // import css from './App.module.css'
@@ -13,7 +12,8 @@ export default function App() {
   const CatalogPage = lazy(() => import('../../pages/CatalogPage/CatalogPage'));
   const CamperPage = lazy(() => import('../../pages/CamperPage/CamperPage'));
   const NotFoundPage = lazy(()=> import('../../pages/NotFoundPage/NotFoundPage'));
-  
+  const Features = lazy(() => import('../Features/Features'));
+const Reviews = lazy(() => import('../Reviews/Reviews'));
   return (
     <>
 
@@ -24,7 +24,8 @@ export default function App() {
     <Route index element={<HomePage/>} />
     <Route path="catalog" element={<CatalogPage/>}/>
     <Route path="catalog/:id" element={<CamperPage/>}>
-        <Route path="features" element={<Features />} />
+    <Route index element={<Features />} />
+        <Route  path="features"  element={<Features />} />
         <Route path="reviews" element={<Reviews />} />
     </Route>
 

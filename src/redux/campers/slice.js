@@ -18,6 +18,11 @@ const campersSlise = createSlice({
     incrementPage: state => {
       state.page += 1;
     },
+    resetCamperData: state => {
+      state.camper = null;
+      state.loading = false;
+      state.error = null;
+    },
   },
   extraReducers: builder => {
     builder
@@ -50,4 +55,6 @@ const campersSlise = createSlice({
 });
 
 export const { incrementPage } = campersSlise.actions;
+
+export const { resetCamperData } = campersSlise.actions;
 export default campersSlise.reducer;
